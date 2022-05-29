@@ -19,6 +19,3 @@ server.on('upgrade', (req, socket, head) => {
 });
 
 server.listen(process.env.PORT || 3000);
-
-server.listen(process.env.PORT || port);
-console.log(`Server listening on port ${port}`);
