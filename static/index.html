@@ -11,7 +11,7 @@
     <meta name="keywords" content="proxy, web proxy, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, unblock chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass iboss, bypass lightspeed filter, chromebooks, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#9F0000">
     <meta name="googlebot" content="index, follow, snippet" />
-    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
     <script src="./scripts/bundle.js" defer></script>
     <script src="./scripts/config.js" defer></script>
     <script src="./index.js" defer></script>
@@ -40,7 +40,73 @@
         </div>
     </div>
 
+    <div class="recent">
+        <h1>Recent Links</h1>
+        <div class="recent-links"></div>
+    </div>
+
+    <button disguise>Disguise Tab</button>
+
+    <div class="facts">
+        <div>
+            <h2>Better Than Other Methods</h2>
+            <p>MillionUnblocks lets you access ANY website, some other methods (like Read The Web extension) can't load some websites (like Discord), and sometimes the window closes when you click on a link.</p>
+        </div>
+
+        <div>
+            <h2>Most Likely Won't Get Blocked</h2>
+            <p>This website will most likely not get blocked because it's made with another website (Vercel) that is not blocked. But even if it does get blocked, the <a href="https://millionunblocks.repl.co">alternate website</a> will be activated and you can use that website, which is made with a coding website (Replit), and schools won't block coding websites.</p>
+        </div>
+
+        <div>
+            <h2>Created By A 13-Year-Old</h2>
+            <p>Fun fact: MillionUnblocks is created completely by a 13-year-old (millionxsam) who goes to Hereford Middle School. You might know who he is if you go to the same school!</p>
+        </div>
+    </div>
+
     <style>
+
+        .facts {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2vw;
+            margin-top: 5vh;
+        }
+
+        .facts div {
+            background-color: rgba(211, 211, 211, 0.527);
+            border-radius: 10px;
+            padding: 1rem;
+            min-height: 20vh;
+            box-shadow: 0 0 2rem rgba(0, 0, 255, 0.678);
+        }
+
+        .facts div p {
+            text-align: center;
+            max-width: fit-content;
+            line-height: 2.5vh;
+        }
+
+        [disguise] {
+            margin-top: 5vh;
+            width: fit-content;
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            color: white;
+            background-color: blue;
+            padding: 2vh;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        [disguise]:hover {
+            background-color: rgba(0, 0, 255, 0.562);
+        }
 
         body {
             padding-bottom: 5vh;
@@ -104,86 +170,106 @@
         [credits] .links [github] i {
             font-size: 30px;
         }
-    </style>
 
-    <script>
-        document.querySelector('[discord]').addEventListener('click', () => {
-            navigator.clipboard.writeText('millionxsam#4967').then(() => alert('Discord username copied'));
-        })
-    </script>
-
-    <div class="disguise-container">
-        <h1>Disguise Settings</h1>
-        <p>Set the name and icon you want for this tab. This is useful if someone is walking by you and they don't see an unblocker tab open.</p>
-        <div class="settings">
-            <div name>
-                <h1>Name</h1>
-                <input placeholder="E.g. New Tab" type="text">
-            </div>
-            <div icon>
-                <h1>Icon URL</h1>
-                <input placeholder="URL of your icon" type="text">
-            </div>
-        </div>
-    </div>
-
-    <style>
-        .disguise-container {
+        .recent {
             display: flex;
-            margin-top: 5vh;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-
-        .disguise-container h1, .disguise-container p {
-            text-align: center;
             color: white;
-            max-width: 90vh;
+        }
+        
+        .recent-links {
+            color: black;
+            display: flex;
+            gap: 1rem;
         }
 
-        .disguise-container .settings {
-            display: flex;
+        .recent-links .recent-link {
+            background-color: white;
+            cursor: pointer;
+            padding: 1vh;
+            border-radius: 5px;
+            text-align: center;
             justify-content: center;
             align-items: center;
-            gap: 10vw;
+            transition: all 0.3s ease;
         }
-
-        .disguise-container input {
-            background-color: #111;
-            border: 2px solid rgb(255, 255, 255, .2);
-            padding: .5vh;
-            border-radius: 10px;
-            color: white;
+        
+        .recent-links .recent-link:hover {
+            background-color: rgba(255, 255, 255, 0.603);
         }
     </style>
 
     <script>
-        const nameInput = document.querySelector('.settings [name] input');
-        const docTitle = document.getElementsByTagName('title')[0];
+    const disguise = document.querySelector('[disguise]');
+    disguise.addEventListener('click', () => window.location.href = '/disguise.html')
 
-        const iconInput = document.querySelector('.settings [icon] input');
-        const docIcon = document.querySelector('[docIcon]');
+    document.querySelector('[discord]').addEventListener('click', () => {
+        navigator.clipboard.writeText('millionxsam#4967').then(() => alert('Discord username copied'));
+    });
 
-        nameInput.value = localStorage.getItem('name') || '';
-        docTitle.innerHTML = localStorage.getItem('name') || 'MillionUnblocks';
+    const form1 = document.querySelector('form');
+    const input1 = document.querySelector('input');
+    const recent = document.getElementsByClassName('recent-links')[0];
+    const recentLinks = JSON.parse(localStorage.getItem('recent')) || [];
 
-        nameInput.addEventListener('input', () => {
-            docTitle.innerHTML = nameInput.value || 'MillionUnblocks';
-            if(nameInput.value) localStorage.setItem('name', nameInput.value)
-            else localStorage.removeItem('name');
+    form1.addEventListener('submit', async event => {
+        event.preventDefault();
+        window.navigator.serviceWorker.register('./sw.js', {
+            scope: __uv$config.prefix
+        }).then(() => {
+            let url = input1.value.trim();
+            if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
+            else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
+
+            function TitleCase(str) {
+                return str.replace(/\S+/g,
+                function(txt) {
+                    return txt[0].toUpperCase() + txt.substring(1).toLowerCase();
+                });
+            }
+
+            const link = { name: TitleCase(input1.value), path: __uv$config.prefix + __uv$config.encodeUrl(url)};
+            if(recentLinks.some(currentLink => (currentLink.name === link.name || currentLink.path === link.path))) return;
+            
+            if(recentLinks.length === 3) {
+                recentLinks.splice(0, 1);
+            }
+
+            recentLinks.push(link);
+            localStorage.setItem('recent', JSON.stringify(recentLinks));
+        });
+    });
+
+    function isUrl(val = ''){
+        if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
+        return false;
+    };
+
+    if(recentLinks.length > 0) {
+        recentLinks.forEach(link => {
+            const element = document.createElement('div');
+            element.classList.add('recent-link');
+            element.innerHTML = link.name;
+            element.dataset.path = link.path;
+            element.setAttribute('onclick', 'recentLinkClick(this)')
+
+            recent.appendChild(element);
         })
-        
-        
-        iconInput.value = localStorage.getItem('icon') || '';
-        docIcon.href = localStorage.getItem('icon') || './unblock.png';
+    } else {
+        document.getElementsByClassName('recent')[0].style.display = 'none';
+    }
 
-        iconInput.addEventListener('input', () => {
-            if(iconInput.value && !iconInput.value.startsWith('https://')) iconInput.value = `https://${iconInput.value}`;
-            docIcon.href = iconInput.value || './unblock.png';
-            if(iconInput.value) localStorage.setItem('icon', iconInput.value)
-            else localStorage.removeItem('icon');
-        })
+    function recentLinkClick(ele) {
+        window.location.href = ele.dataset.path;
+    }
+
+    const docTitle = document.getElementsByTagName('title')[0];
+    const docIcon = document.querySelector('[docIcon]');
+
+    docTitle.innerHTML = localStorage.getItem('name') || 'MillionUnblocks';
+    docIcon.href = localStorage.getItem('icon') || './unblock.png';
     </script>
 </body>
 </html>
