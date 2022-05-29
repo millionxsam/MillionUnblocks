@@ -5,7 +5,6 @@ import nodeStatic from 'node-static';
 
 const bare =  new Server('/bare/', '');
 const serve = new nodeStatic.Server('static/');
-const port = 3000;
 
 const server = http.createServer();
 
@@ -19,5 +18,4 @@ server.on('upgrade', (req, socket, head) => {
 	socket.end();
 });
 
-server.listen(process.env.PORT || port);
-console.log(`Server listening on port ${port}`);
+server.listen(process.env.PORT || 3000);
