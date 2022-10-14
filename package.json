@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "bare-server-node": "github:tomphttp/bare-server-node",
+    "express": "^4.18.1",
+    "node-static": "^0.7.11",
+    "process": "^0.11.10"
+  },
+  "name": "millionunblocks",
+  "version": "1.0.0",
+  "description": "Unblock any website or browse the internet with proxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later"
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link docIcon rel="icon" href="./unblock.png">
+</head>
+<body>
+    <div class="disguise-logo">
+        <img class="logo" src="./disguise.png" alt="" />
+    </div>
+    <div class="disguise-container">
+        <h1>Disguise Settings</h1>
+        <p>Set a custom name and icon you want to show for this tab. This is useful if someone is walking by you, so they wouldn't see an unblocker tab open, but the custom name and icon instead.</p>
+        <div class="settings">
+            <div name>
+                <h1>Name</h1>
+                <input placeholder="E.g. New Tab" type="text">
+            </div>
+            <div icon>
+                <h1>Icon URL</h1>
+                <input placeholder="URL of your icon" type="text">
+            </div>
+        </div>
+        <button home>Home</button>
+    </div>
+
+    <style>
+        [home] {
+            margin-top: 3vh;
+            border: none;
+            padding: 2vh;
+            background-color: blue;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        [home]:hover {
+            background-color: rgba(0, 0, 255, 0.562);
+        }
+
+        .disguise-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5vh;
+        }
+
+        .disguise-container {
+            display: flex;
+            margin-top: 5vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .disguise-container h1, .disguise-container p {
+            text-align: center;
+            color: white;
+            max-width: 90vh;
+        }
+
+        .disguise-container .settings {
+            display: grid;
+            justify-content: center;
+						grid-template-columns: auto auto;
+            align-items: center;
+            gap: 5vw;
+        }
+
+        .disguise-container input {
+            background-color: #111;
+            border: 2px solid rgb(255, 255, 255, .2);
+            padding: .5vh;
+            border-radius: 10px;
+            color: white;
+        }
+
+			@media (max-width: 686px) {
+					.disguise-container .settings {
+						grid-template-columns: auto;
+					}
+				}
+
+			@media (max-width: 722px) {
+				.disguise-container p {
+					max-width: 90vw;
+				}
+			}
+    </style>
+
+    <script>
+        const home = document.querySelector('[home]');
+        home.addEventListener('click', () => window.location.href = '/');
+        
+        const nameInput = document.querySelector('.settings [name] input');
+        const docTitle = document.getElementsByTagName('title')[0];
+
+        const iconInput = document.querySelector('.settings [icon] input');
+        const docIcon = document.querySelector('[docIcon]');
+
+        nameInput.value = localStorage.getItem('name') || '';
+        docTitle.innerHTML = localStorage.getItem('name') || 'MillionUnblocks';
+
+        nameInput.addEventListener('input', () => {
+            docTitle.innerHTML = nameInput.value || 'MillionUnblocks';
+            if(nameInput.value) localStorage.setItem('name', nameInput.value)
+            else localStorage.removeItem('name');
+        })
+        
+        
+        iconInput.value = localStorage.getItem('icon') || '';
+        docIcon.href = localStorage.getItem('icon') || './unblock.png';
+
+        iconInput.addEventListener('input', () => {
+            if(iconInput.value && !iconInput.value.startsWith('https://')) iconInput.value = `https://${iconInput.value}`;
+            docIcon.href = iconInput.value || './unblock.png';
+            if(iconInput.value) localStorage.setItem('icon', iconInput.value)
+            else localStorage.removeItem('icon');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MillionUnblocks</title>
+    <link docIcon rel="icon" href="./unblock.png">
+    <meta name="description" content="MillionUnblocks is a proxy you can use to unblock websites or search web with privacy." />
+    <meta name="author" content="Website Unblocker & Proxy" />
+    <meta name="keywords" content="proxy, web proxy, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, unblock chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass, bypass lightspeed filter, chromebooks, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#9F0000">
+    <meta name="googlebot" content="index, follow, snippet" />
+    <link rel="stylesheet" href="./index.css">
+    <script src="./scripts/bundle.js" defer></script>
+    <script src="./scripts/config.js" defer></script>
+    <script src="./index.js" defer></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8804134390307193"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+
+<body>
+    <div class="logo-wrapper">
+        <img class="logo" src="./unblock.png" alt="" />
+        <h1>MillionUnblocks</h1>
+    </div>
+
+    <div class="desc">
+        <p>Access unblocked websites or browse the web with privacy</p>
+    </div>
+
+    <form>
+        <input placeholder="Search Google or Enter a URL">
+        <button type="submit" class="go">Go</button>
+    </form>
+
+    <div credits>
+        <p>Created by Millionxsam</p>
+        <div class="links">
+            <a discord><i class="fa-brands fa-discord"></i></a>
+            <a github href="https://github.com/millionxsam" rel="noopener" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </div>
+
+    <div class="recent">
+        <h1>Recent Links</h1>
+        <div class="recent-links"></div>
+    </div>
+
+    <button disguise>Disguise Tab</button>
+
+    <div class="facts">
+        <div>
+            <h2>Better Than Other Methods</h2>
+            <p>MillionUnblocks lets you access ANY website, some other methods (like Chrome extensions) can't load some websites, and sometimes the window closes when you click on a link.</p>
+        </div>
+
+        <div>
+            <h2>Most Likely Won't Get Blocked</h2>
+            <p>This website will most likely not get blocked because it's made with a website (Replit) that is not blocked. But even if it does get blocked, the <a href="https://millionunblocks.vercel.app">alternate website</a> will be activated and you can use that website.</p>
+        </div>
+    </div>
+
+    <style>
+
+        button.go {
+          border: none;
+					align-items: center;
+					cursor: pointer;
+					font-size: 2.5vh;
+					margin-left: 1vw;
+          background-color: #008BFF;
+					color: white;
+					width: 6vh;
+					text-align: center;
+					border-radius: 5px;
+					transition: all 0.2s ease;
+        }
+
+				button.go:hover {
+					background-color: #55B2FF;
+				}
+
+        .facts {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            gap: 2vw;
+            margin-top: 5vh;
+						grid-template-columns: auto auto;
+        }
+
+        .facts div {
+            background-color: rgba(211, 211, 211, 0.527);
+            border-radius: 10px;
+            padding: 1rem;
+            min-height: 20vh;
+            box-shadow: 0 0 1.5rem rgba(0, 0, 255, 0.6);
+        }
+
+        .facts div p {
+            text-align: center;
+            max-width: fit-content;
+        }
+
+        [disguise] {
+            margin-top: 5vh;
+            width: fit-content;
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            color: white;
+            background-color: blue;
+            padding: 2vh;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        [disguise]:hover {
+            background-color: rgba(0, 0, 255, 0.562);
+        }
+
+        body {
+            padding-bottom: 5vh;
+        }
+
+        .logo-wrapper {
+            margin-top: 5%;
+        }
+
+        [credits] {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        [credits] a {
+            color: white;
+            cursor: pointer;
+        }
+
+        [credits] p {
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        [credits] .links {
+            justify-content: center;
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        [credits] .links [discord] {
+            color: #7289DA;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        [credits] .links [github] {
+            color: #6e5494;
+            transition: all 0.3s ease;
+        }
+        
+        [credits] .links [discord]:hover {
+            color: #7289da91;
+            margin-top: 0.15rem;
+        }
+        
+        [credits] .links [github]:hover {
+            color: #6e549496;
+            margin-top: 0.15rem;
+        }
+        
+        [credits] .links [discord] i {
+            font-size: 30px;
+        }
+        
+        [credits] .links [github] i {
+            font-size: 30px;
+        }
+
+        .recent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .recent-links {
+            color: black;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .recent-links .recent-link {
+            background-color: white;
+            cursor: pointer;
+            padding: 1vh;
+            border-radius: 5px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .recent-links .recent-link:hover {
+            background-color: rgba(255, 255, 255, 0.603);
+        }
+
+				@media (max-width: 686px) {
+					.facts {
+						grid-template-columns: auto;
+						gap: 5vw;
+					}
+
+					.facts div {
+						max-width: 50vw;
+					}
+				}
+
+				@media (max-width: 484px) {
+					form input {
+						max-width: 60vw;
+					}
+
+					.desc p {
+						max-width: 60vw;
+					}
+				}
+    </style>
+
+    <script>
+    const disguise = document.querySelector('[disguise]');
+    disguise.addEventListener('click', () => window.location.href = '/disguise.html')
+
+    document.querySelector('[discord]').addEventListener('click', () => {
+        navigator.clipboard.writeText('millionxsam#4967').then(() => alert('Discord username copied'));
+    });
+
+    const form1 = document.querySelector('form');
+    const input1 = document.querySelector('input');
+    const recent = document.getElementsByClassName('recent-links')[0];
+    const recentLinks = JSON.parse(localStorage.getItem('recent')) || [];
+
+    form1.addEventListener('submit', async event => {
+        event.preventDefault();
+        window.navigator.serviceWorker.register('./sw.js', {
+            scope: __uv$config.prefix
+        }).then(() => {
+            let url = input1.value.trim();
+            if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
+            else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
+
+            function TitleCase(str) {
+                return str.replace(/\S+/g,
+                function(txt) {
+                    return txt[0].toUpperCase() + txt.substring(1).toLowerCase();
+                });
+            }
+
+            const link = { name: TitleCase(input1.value || "google"), path: __uv$config.prefix + __uv$config.encodeUrl(url)};
+            if(recentLinks.some(currentLink => (currentLink.name === link.name || currentLink.path === link.path))) return;
+            
+            if(recentLinks.length === 3) {
+                recentLinks.splice(0, 1);
+            }
+
+            recentLinks.push(link);
+            localStorage.setItem('recent', JSON.stringify(recentLinks));
+        });
+    });
+
+    function isUrl(val = ''){
+        if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
+        return false;
+    };
+
+    if(recentLinks.length > 0) {
+        recentLinks.forEach(link => {
+            const element = document.createElement('div');
+            element.classList.add('recent-link');
+            element.innerHTML = link.name;
+            element.dataset.path = link.path;
+            element.setAttribute('onclick', 'recentLinkClick(this)')
+
+            recent.appendChild(element);
+        })
+    } else {
+        document.getElementsByClassName('recent')[0].style.display = 'none';
+    }
+
+    function recentLinkClick(ele) {
+        window.location.href = ele.dataset.path;
+    }
+
+    const docTitle = document.getElementsByTagName('title')[0];
+    const docIcon = document.querySelector('[docIcon]');
+
+    docTitle.innerHTML = localStorage.getItem('name') || 'MillionUnblocks';
+    docIcon.href = localStorage.getItem('icon') || './unblock.png';
+    </script>
+</body>
+</html>
