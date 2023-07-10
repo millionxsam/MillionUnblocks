@@ -1,17 +1,20 @@
-import http from 'http';
-import nodeStatic from 'node-static';
+import http from "http";
+import nodeStatic from "node-static";
+import { createBareServer } from "@tomphttp/bare-server-node";
 
-
-const serve = new nodeStatic.Server('static/');
+const bare = createBareServer("/bare/");
+const serve = new nodeStatic.Server("static/");
 const port = 3000;
 
 const server = http.createServer();
 
-server.on('request', (request, response) => {
+server.on("request", (request, response) => {
+  if (bare.routeRequest(request, response)) return true;
   serve.serve(request, response);
 });
 
-server.on('upgrade', (req, socket, head) => {
+server.on("upgrade", (req, socket, head) => {
+  if (bare.routeUpgrade(req, socket, head)) return;
   socket.end();
 });
 

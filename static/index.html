@@ -1,158 +1,160 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>MillionUnblocks</title>
-    <link rel="icon" href="./millionunblocks.png">
-    <meta name="description" content="MillionUnblocks is a proxy you can use to unblock websites or search web with privacy." />
+    <link rel="icon" href="./millionunblocks.png" />
+    <meta
+      name="description"
+      content="MillionUnblocks is a proxy you can use to unblock websites or search web with privacy."
+    />
     <meta name="author" content="Website Unblocker & Proxy" />
-    <meta name="keywords" content="proxy, web proxy, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, unblock chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass, bypass lightspeed filter, chromebooks, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#9F0000">
+    <meta
+      name="keywords"
+      content="proxy, web proxy, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, unblock chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass, bypass lightspeed filter, chromebooks, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#9F0000"
+    />
     <meta name="googlebot" content="index, follow, snippet" />
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css" />
     <script src="./scripts/bundle.js" defer></script>
     <script src="./scripts/config.js" defer></script>
     <script src="./index.js" defer></script>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8804134390307193"
-     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/all.css">
-</head>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8804134390307193"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/all.css" />
+  </head>
 
-<body>
-		<div class="grid"></div>
-		<div class="light"></div>
+  <body>
+    <div class="grid"></div>
     <div class="logo-wrapper">
-        <img class="logo" src="./millionunblocks.png">
-        <h1>MillionUnblocks</h1>
+      <img class="logo" src="./millionunblocks.png" />
+      <h1>MillionUnblocks</h1>
     </div>
 
     <div class="desc">
-        <p>Access unblocked websites or browse the web with privacy</p>
+      <p>Access unblocked websites or browse the web with privacy</p>
     </div>
 
     <form>
-        <input placeholder="Search Google or Enter a URL">
-        <button type="submit" class="go">Go</button>
-				<div class="loading-wrapper">
-					<div class="loading-circle"></div>
-					Loading...
-				</div>
+      <input placeholder="Search Google or Enter a URL" />
+      <button type="submit" class="go">Go</button>
+      <div class="loading-wrapper">
+        <div class="loading-circle"></div>
+        Loading...
+      </div>
     </form>
 
     <style>
-
-			.light {
-				background-color: gray;
-				height: 50px;
-				width: 50px;
-				position: fixed;
-				transform: translate(-50%, -50%);
-				display: none;
-			}
-
-			.light.active {
-				display: block;
-			}
-
-			.grid {
-				background: url("grid.svg") repeat;
+      .grid {
+        background: url("grid.svg") repeat;
         position: fixed;
         height: 100%;
         width: 100%;
         z-index: -1;
-			}
+      }
 
-			:root {
-				--main-color: #00A7C8;
-			}
+      :root {
+        --main-color: #00a7c8;
+      }
 
-			body {
-				background-color: black;
-			}
+      body {
+        background-color: black;
+      }
 
-			.loading-wrapper {
-				display: none;
-			}
+      .loading-wrapper {
+        display: none;
+      }
 
-			form.loading .loading-wrapper {
-				display: block;
-			}
+      form.loading .loading-wrapper {
+        display: block;
+      }
 
-			form.loading input, form.loading button {
-				display: none;
-			}
+      form.loading input,
+      form.loading button {
+        display: none;
+      }
 
-			.logo-wrapper .logo {
-				width: 150px;
-				height: 150px;
-			}
+      .logo-wrapper .logo {
+        width: 150px;
+        height: 150px;
+      }
 
-			form input {
-				background-color: black;
-				border: 1px solid var(--main-color);
-			}
+      form input {
+        background-color: black;
+        border: 1px solid var(--main-color);
+      }
 
-				.logo-wrapper h1 {
-    			margin-top: 2.5rem;
-				}
+      .logo-wrapper h1 {
+        margin-top: 2.5rem;
+      }
 
-				form input:hover {
-					cursor: text;
-    			border: 1px solid var(--main-color);
-    			border-radius: 6px;
-				}
+      form input:hover {
+        cursor: text;
+        border: 1px solid var(--main-color);
+        border-radius: 6px;
+      }
 
-        button.go {
-					margin-top: 5px;
-					height: 48px;
-					border: 1px solid var(--main-color);
-          border: none;
-					align-items: center;
-					cursor: pointer;
-					font-size: 2.5vh;
-					margin-left: 1vw;
-          background-color: var(--main-color);
-					color: white;
-					width: 6vh;
-					text-align: center;
-					border-radius: 5px;
-					transition: all 0.2s ease;
+      button.go {
+        margin-top: 5px;
+        height: 48px;
+        border: 1px solid var(--main-color);
+        border: none;
+        align-items: center;
+        cursor: pointer;
+        font-size: 2.5vh;
+        margin-left: 1vw;
+        background-color: var(--main-color);
+        color: white;
+        width: 6vh;
+        text-align: center;
+        border-radius: 5px;
+        transition: all 0.2s ease;
+      }
+
+      button.go:hover {
+        opacity: 0.75;
+      }
+
+      .logo-wrapper {
+        margin-top: 5%;
+      }
+
+      form.loading .loading-wrapper {
+        margin-top: 1rem;
+        color: white;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      form.loading .loading-wrapper .loading-circle {
+        border-top: 0.5rem solid var(--main-color);
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+        animation-name: loading;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes loading {
+        0% {
+          transform: rotate(-360deg);
         }
-
-				button.go:hover {
-					opacity: .75;
-				}
-
-        .logo-wrapper {
-            margin-top: 5%;
-        }
-
-				form.loading .loading-wrapper {
-					margin-top: 1rem;
-					color: white;
-					font-size: 30px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-				}
-
-				form.loading .loading-wrapper .loading-circle {
-					border-top: .5rem solid var(--main-color);
-					height: 3rem;
-					width: 3rem;
-					border-radius: 50%;
-					margin-right: 1rem;
-					animation-name: loading;
-					animation-duration: .5s;
-					animation-iteration-count: infinite;
-				}
-
-				@keyframes loading {
-					0% {
-						transform: rotate(-360deg);
-				}
+      }
     </style>
-</body>
+  </body>
 </html>
