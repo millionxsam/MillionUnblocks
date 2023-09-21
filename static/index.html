@@ -20,7 +20,7 @@
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
-      content="#9F0000"
+      content="#00a7c8"
     />
     <meta name="googlebot" content="index, follow, snippet" />
     <link rel="stylesheet" href="./index.css" />
@@ -55,68 +55,63 @@
       </div>
     </form>
 
-    <dialog class="onload">
-      <h1>Loading problem and uptime fixed!</h1>
-      <p>
-        For a while, millionunblocks has been taking a long time to load or not
-        loading at all. This new website should fix that problem. It's still not
-        as fast as the kurzweil extension used to be, but it's back to how it
-        was before the problem started. The old website used to go down a lot
-        too, but this one shouldn't have that problem anymore because I made
-        this one using a different program that doesn't make your site go down
-        like that. Also, enjoy the redesign!
-      </p>
-      <i class="fa-solid fa-list-check"></i>
-      <button class="closeModal">Close</button>
-    </dialog>
-
-    <dialog class="important">
-      <h1 style="color: red">IMPORTANT!</h1>
-      <p>
-        Even though this new site doesn't go down like the old one anymore, it
-        WILL go inactive once there has been no activity on the site for 15
-        minutes. BUT it will start up again when someone comes to this site
-        again. So, please don't think that the site isn't working if it's taking
-        a while to load, it's probably just starting up if it's been inactive
-        for 15 minutes. (It may take about 1 minute to load the site when it's
-        starting up)
-      </p>
-      <i class="fa-solid fa-exclamation"></i>
-      <button class="closeModal">Close</button>
-    </dialog>
-
-    <script>
-      const frstmodal = document.querySelector("dialog.onload");
-      const scndModal = document.querySelector("dialog.important");
-
-      scndModal.style.display = "none";
-
-      document.querySelectorAll("dialog").forEach((d) => {
-        d.addEventListener("close", () => {
-          d.style.display = "none";
-        });
-      });
-
-      frstmodal.showModal();
-
-      const closeScndModal = document.querySelector(
-        "dialog.important button.closeModal"
-      );
-      const closeLoadModal = document.querySelector(
-        "dialog.onload button.closeModal"
-      );
-      closeLoadModal.addEventListener("click", () => {
-        frstmodal.close();
-        scndModal.showModal();
-        scndModal.style.display = "flex";
-      });
-
-      closeScndModal.addEventListener("click", () => {
-        scndModal.close();
-      });
-    </script>
+    <div class="imp-msg">
+      <h1>⬇ Important Messages ⬇</h1>
+      <div class="boxes">
+        <div>
+          <h2>If it says "this site has been suspended by its owner"</h1>
+            <p>There are two sites, millionunblocks.onrender.com and millionunblocks-alt.onrender.com If one site says it has been suspended, use the other one. This is because both sites have a limited amount of resources, and the site is suspended when the resources are used. They will renew at the end of every month though, so at leastone of the websites should be online all the time.</p>
+          </div>
+          <div>
+            <h2>If the site takes a long time to load</h1>
+              <p>If no one's been using the site for 15 minutes, it will automatically go to sleep and the next time someone loads it, it will start back up but will take about 2 minutes to load the site. So if the website is taking a long time to load, it's probably still working, it's just that it's starting back up after it's been inactive for more than 15 minutes. If it still does not load or shows an unexpected screen, contact me.</p>
+            </div>
+      </div>
+    </div>
 
     <style>
+      :root {
+        --main-color: #00a7c8;
+      }
+
+      .imp-msg {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .imp-msg .boxes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .imp-msg .boxes div {
+        background-color: rgba(0, 0, 0, 0.815);
+        border-radius: 10px;
+        min-width: 25vw;
+        min-height: 20rem;
+        width: min-content;
+        height: min-content;
+        padding: 1.5rem;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        border: 3px solid var(--main-color);
+      }
+
+      .imp-msg h1 {
+        color: red;
+        background-color: rgba(0, 0, 0, 0.603);
+        width: fit-content;
+        padding: 1.5vh;
+        border-radius: 10px;
+      }
+
       * {
         color: white;
       }
@@ -188,10 +183,6 @@
         100% {
           color: var(--main-color);
         }
-      }
-
-      :root {
-        --main-color: #00a7c8;
       }
 
       .grid {
